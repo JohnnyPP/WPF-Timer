@@ -22,13 +22,12 @@ namespace WpfApplication1
     /// </summary>
     public partial class MainWindow : Window
     {
-        int i = 0;
+        int i = 0, k=0;
+        private static System.Timers.Timer aTimer;
 
         public MainWindow()
         {
             InitializeComponent();
-
-            
 
 
             DispatcherTimer dispatcherTimer = new DispatcherTimer();
@@ -39,9 +38,25 @@ namespace WpfApplication1
             dispatcherTimer.Start();
 
             dispatcherTimer2.Tick += new EventHandler(dispatcherTimer_Tick2);
-            dispatcherTimer2.Interval = new TimeSpan(0, 0, 2);
+            dispatcherTimer2.Interval = new TimeSpan(0, 0, 0, 0, 100);
             dispatcherTimer2.Start();
+
+            aTimer = new System.Timers.Timer();
+            aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+
+            aTimer.Interval = 100;
+            aTimer.Enabled = true;
           
+        }
+
+        private void OnTimedEvent(object sender, ElapsedEventArgs e)
+        {
+            this.Dispatcher.Invoke((Action)(() =>
+            {
+                textBox4.Text = k.ToString();
+                k++;
+            })); 
+            
         }
 
         private void dispatcherTimer_Tick2(object sender, EventArgs e)
