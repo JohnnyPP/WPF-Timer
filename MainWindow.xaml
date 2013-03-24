@@ -8,6 +8,7 @@
         <TextBox HorizontalAlignment="Left" Height="23" Margin="10,180,0,0" TextWrapping="Wrap" Text="TextBox" Name="textBox2" VerticalAlignment="Top" Width="191"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="10,222,0,0" TextWrapping="Wrap" Text="TextBox" Name="textBox3" VerticalAlignment="Top" Width="191"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="10,265,0,0" TextWrapping="Wrap" Text="System.Timers.Timer" Name="textBox4" VerticalAlignment="Top" Width="191"/>
+        <ProgressBar HorizontalAlignment="Left" Height="22" Margin="10,310,0,0" VerticalAlignment="Top" Name="progressBar" Width="191"/>
 
     </Grid>
 </Window>

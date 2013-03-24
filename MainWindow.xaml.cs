@@ -32,6 +32,8 @@ namespace WpfApplication1
 
             DispatcherTimer dispatcherTimer = new DispatcherTimer();
             DispatcherTimer dispatcherTimer2 = new DispatcherTimer();
+            ProgressBar progressBar = new ProgressBar();
+
            
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick); 
             dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
@@ -54,6 +56,7 @@ namespace WpfApplication1
             this.Dispatcher.Invoke((Action)(() =>
             {
                 textBox4.Text = k.ToString();
+                progressBar.Value = k;
                 k++;
             })); 
             
